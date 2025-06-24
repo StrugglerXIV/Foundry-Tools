@@ -1,7 +1,9 @@
 {
+  "id": "foundry-tools",
   "name": "foundry-tools",
   "title": "Foundry Tools",
-  "description": "Different foundry tools.",
+  "type": "module",
+  "description": "Different Foundry tools.",
   "version": "1.0.0",
   "author": "Struggler",
   "compatibility": {
@@ -21,9 +23,7 @@
       }
     ]
   },
-  "scripts": [
-    "src/main.js"
-  ],
+  "scripts": ["scripts/main.js"],
   "manifest": "https://raw.githubusercontent.com/StrugglerXIV/Foundry-Tools/main/public/module.json",
   "download": "https://github.com/StrugglerXIV/Foundry-Tools/archive/refs/heads/main.zip"
 }
