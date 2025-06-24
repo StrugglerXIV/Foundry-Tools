@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "release": "npm run build && zip -r foundry-tools.zip module.json scripts/"
+    "release": "npm run build && zip -r foundry-tools.zip module.json scripts/",
+    "sync": "git add . && git commit -m \"Quick commit\" && git pull origin main && git push origin main"
   },
   "keywords": [],
   "author": "",
