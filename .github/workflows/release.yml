@@ -1,0 +1,33 @@
+name: Build & Release Foundry Module
+
+on:
+  push:
+    tags:
+      - 'v*'  # Only run this on version tag pushes (like v1.0.0)
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and zip module
+        run: |
+          npm run build
+          zip -r foundry-tools.zip module.json scripts/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: foundry-tools.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
