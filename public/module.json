@@ -22,7 +22,7 @@
     ]
   },
   "scripts": [
-    "scripts/main.js"
+    "src/main.js"
   ],
   "manifest": "https://raw.githubusercontent.com/StrugglerXIV/Foundry-Tools/main/public/module.json",
   "download": "https://github.com/StrugglerXIV/Foundry-Tools/archive/refs/heads/main.zip"
