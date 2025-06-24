@@ -1,4 +1,4 @@
-async function applyEffectsToSelectedTokens() {
+export async function applyEffectsToSelectedTokens() {
   console.log("Applying creature effects...");
   // Your macro logic goes here
 
@@ -99,8 +99,8 @@ for (const token of canvas.tokens.controlled) {
             console.log(`Mapping Immunity: ${type}`);
 
             // Calculate the values based on the actor's details
-            sourceActor.system.details.cr || 0; // Fallback to 0 if undefined
-            sourceActor.system.prof || 0; // Fallback to 0 if undefined
+            const crValue = sourceActor.system.details.cr || 0; // Fallback to 0 if undefined
+            const profValue = sourceActor.system.prof || 0; // Fallback to 0 if undefined
 
             return {
                 key: `system.traits.dm.amount.${type}`,
@@ -219,30 +219,3 @@ for (const token of canvas.tokens.controlled) {
 // Notify the user
 ui.notifications.info("Resistances, immunities, proficiency, and damage updated for all selected tokens.");
 }
-
-Hooks.once("ready", () => {
-  console.log("Creature Auto Effects | Rollup build succeeded.");
-});
-
-Hooks.once("ready", () => {
-  console.log("Creature Auto Effects | Ready");
-
-  game.creatureAutoEffects = {
-    applyEffectsToSelectedTokens
-  };
-});
-
-Hooks.on("getSceneControlButtons", (controls) => {
-  const tokenControls = controls.find(c => c.name === "token");
-  if (!tokenControls) return;
-
-  tokenControls.tools.push({
-    name: "apply-creature-effects",
-    title: "Apply Creature Effects",
-    icon: "fas fa-magic", // You can change this
-    visible: game.user.isGM,
-    onClick: () => game.creatureAutoEffects.applyEffectsToSelectedTokens(),
-    button: true
-  });
-});
-//# sourceMappingURL=main.js.map
