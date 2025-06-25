@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Zip the release files
-        run: zip -r foundry-tools.zip module.json scripts/
+        run: cd dist && zip -r ../foundry-tools.zip .
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
