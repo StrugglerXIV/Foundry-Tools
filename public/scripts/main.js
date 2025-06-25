@@ -37,10 +37,12 @@ async function applyEffectsToSelectedTokens() {
 
         // 2. Default + Existing Resistances to -@prof
         let existingDrRaw = actor.system.traits.dr?.value ?? [];
+        console.log("--------Denis stuff " + existingDrRaw);
         if (typeof existingDrRaw !== "object") existingDrRaw = [];
         const drList = Array.isArray(existingDrRaw)
             ? existingDrRaw
             : Object.values(existingDrRaw).filter(v => typeof v === "string");
+        console.log("--------Denis stuff " + drList);
         const dr = new Set(drList);
 
         // Add defaults
