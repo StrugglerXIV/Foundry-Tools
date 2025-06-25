@@ -17,6 +17,7 @@ Hooks.once("ready", () => {
 Hooks.on("getSceneControlButtons", (controls) => {
   const tokenControls = controls.find(c => c.name === "token");
   if (!tokenControls) return;
+  if (!game.user.isGM) return;
 
   tokenControls.tools.push({
     name: "apply-creature-effects",
