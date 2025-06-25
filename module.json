@@ -4,7 +4,7 @@
   "title": "Foundry Tools",
   "type": "module",
   "description": "Different Foundry tools.",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "author": "Struggler",
   "compatibility": {
     "minimum": 12,
