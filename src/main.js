@@ -7,7 +7,7 @@ Hooks.once("ready", () => {
     applyEffectsToSelectedTokens
   };
 
-  
+  // Another comment
   // Add control button here too
   Hooks.on("getSceneControlButtons", (controls) => {
     const tokenControls = controls.find(c => c.name === "token");
