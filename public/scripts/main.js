@@ -70,6 +70,7 @@ async function applyEffectsToSelectedTokens() {
             });
         }
 
+        
         // 3. Immunities to -(@prof*2)
         const di = new Set(actor.system.traits.di.value || []);
         if (!hasEffect("Custom Immunities") && di.size > 0) {
@@ -167,6 +168,7 @@ Hooks.once("ready", () => {
     applyEffectsToSelectedTokens
   };
 
+  
   // Add control button here too
   Hooks.on("getSceneControlButtons", (controls) => {
     const tokenControls = controls.find(c => c.name === "token");
