@@ -10,8 +10,8 @@ export default {
   plugins: [
     copy({
       targets: [
-        { src: 'public/module.json', dest: 'dist' },
-        { src: 'public/icons', dest: 'dist' }  // Optional
+        { src: 'module.json', dest: 'dist' },
+        { src: 'public/scripts', dest: 'dist' }
       ],
       hook: 'writeBundle'
     })
